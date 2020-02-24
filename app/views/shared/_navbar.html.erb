@@ -1,0 +1,45 @@
+<div class="flex-container">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="flex-item band align-items-center justify-content flex-row">
+      <%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fc3%2F6a%2F40%2Fc36a408f5b721d49a6c72a274f6d44ef--rock-bands-gospel.jpg&f=1&nofb=1" %>
+        <% end %>
+        <div class="flex-item title">
+          <h1 class="uvp">Rent A Band</h1>
+          <p class="tagline">Find the best band for every event</p>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Sign up</a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+   </div>
+</div>
+
+
+
+
