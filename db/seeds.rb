@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+
+
 10.times do
 
   user = Band.new(
+    user_id: 1,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
     band_email: Faker::Internet.email,
