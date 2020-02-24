@@ -1,5 +1,69 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker2" ).datepicker();
+  } );
+  </script>
+</head>
+
+<body>
+
 
 <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
 </div>
 <br>
 <br>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <form action="#">
+        <!-- Your form content -->
+       <h2 class= "text-center mb-5">What kind of band are you looking for?</h2>
+
+                 <div class ="form-group">
+            <label for="Your-email">Genre</label>
+            <input type="text" class="form-control" id="genre" placeholder="Rock">
+          </div>
+
+          <div class ="form-group">
+            <label for="Your-email">Band Type</label>
+            <input type="text" class="form-control" id="category" placeholder="Duo">
+          </div>
+          <div class="form-row">
+          <div class="col-6 form-group">
+            <label for="startdate">Startdate</label>
+            <input type="text" class="form-control" id="datepicker" placeholder="DD.MM.YYYY" value readonly>
+          </div>
+          <div class="col-6 form-group">
+            <label for="enddate">Enddate</label>
+            <input type="text" class="form-control" id="datepicker2" placeholder="DD.MM.YYYY" value readonly>
+          </div>
+        </div>
+
+           <input type="submit" value="Search" class="btn btn-primary btn-lg w-100">
+      </form>
+    </div>
+  </div>
+
+</body>
+<footer>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> by Rudi, Stefan & Vera
+  </div>
+</div>
+
+
+</footer>
