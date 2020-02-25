@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+
 ActiveRecord::Schema.define(version: 2020_02_25_150137) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +56,19 @@ ActiveRecord::Schema.define(version: 2020_02_25_150137) do
     t.index ["user_id"], name: "index_bands_on_user_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "total_fee"
+    t.boolean "confirmation_status"
+    t.bigint "band_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_bookings_on_band_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -81,4 +97,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_150137) do
   add_foreign_key "bands", "categories"
   add_foreign_key "bands", "genres"
   add_foreign_key "bands", "users"
+  add_foreign_key "bookings", "bands"
+  add_foreign_key "bookings", "users"
 end
