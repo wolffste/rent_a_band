@@ -14,6 +14,7 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
+    @
     if @band.save!
       redirect_to band_path(@band)
     else
