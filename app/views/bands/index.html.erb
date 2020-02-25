@@ -10,7 +10,11 @@
   <% @bands.each do |band| %>
     <div class="col-12 col-sm-6 col-lg-3">
       <div class="band-card flex-item">
+        <% if band.photo.name == "photo" %>
           <img src= 'https://images.unsplash.com/photo-1483393458019-411bc6bd104e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80'/>
+            <% else %>
+           <%= cl_image_tag @band.photo.key, height: 300, width: 300, crop: :fill %>
+        <% end %>
            <div class="card-infos">
             <p><strong><%= band.name %></strong></p>
             <p><%= band.description %></p>
