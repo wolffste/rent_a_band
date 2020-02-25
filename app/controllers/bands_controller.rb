@@ -2,18 +2,22 @@ class BandsController < ApplicationController
   before_action :set_band, only: [:show, :update, :edit, :destroy]
 
   def index
-    @bands = Band.all
+    @bands = policy_scope(Band).all
   end
 
   def show
+    authorize @band
   end
 
   def new
     @band = Band.new
+    authorize @band
   end
 
   def create
     @band = Band.new(band_params)
+    @band.user = current_user
+    authorize @band
     if @band.save!
       redirect_to band_path(@band)
     else
@@ -22,10 +26,12 @@ class BandsController < ApplicationController
   end
 
   def edit
+    authorize @band
   end
 
   def update
     @band.update(band_params)
+    authorize @band
     if @band.save!
       redirect_to band_path(@band)
     else
@@ -34,6 +40,7 @@ class BandsController < ApplicationController
   end
 
   def destroy
+    authorize @band
     @band.destroy
     redirect_to bands_path
   end
