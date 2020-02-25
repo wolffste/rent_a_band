@@ -1,0 +1,24 @@
+<div class="container bandprofile">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-img">
+        <img src="https://images.unsplash.com/photo-1483393458019-411bc6bd104e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" width="300px" alt=""/>
+      </div>
+    </div>
+    <div class="col-md-6">
+           <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="profile-item">
+                <h1><%= @band.name %></h1>
+
+                  <p><strong>Name:</strong> </p>
+                  <p><%= @band.name %></p>
+                  <p><strong>Description:</strong> </p>
+                  <p><%= @band.description %></p>
+                  <br>
+                   <%= link_to 'Back', bands, class: "btn btn-warning" %>
+              </li>
+            </ul>
+    </div>
+  </div>
+</div>
+
