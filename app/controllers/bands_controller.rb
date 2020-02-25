@@ -51,7 +51,7 @@ class BandsController < ApplicationController
   end
 
   def filter
-    @filtered_bands = Band.where("category_id=1 and genre_id=1")
+    @filtered_bands = Band.where("category_id = ? and genre_id= ? ", "#{params[:search][:category]}", "#{params[:search][:genre]}")
     authorize @filtered_bands
   end
 
