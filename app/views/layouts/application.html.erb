@@ -11,16 +11,9 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-
     <%= render 'shared/flashes' %>
     <%= yield %>
-
-    <%= javascript_include_tag 'application' %>
-
-    <%= javascript_pack_tag 'application' %>
-  </body>
-
-  <footer>
+      <footer>
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
@@ -34,4 +27,11 @@
 
 
 </footer>
+
+    <%= javascript_include_tag 'application' %>
+
+    <%= javascript_pack_tag 'application' %>
+  </body>
+
+
 </html>

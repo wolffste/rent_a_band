@@ -1,9 +1,9 @@
 <%= simple_form_for (@band) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
+  <%= f.input :name, class: "form-group" %>
+  <%= f.input :description, class: "form-group"  %>
   <%= f.collection_check_boxes :availability, [[true, 'Yes'], [false, 'No']], :first, :last %>
-  <%= f.input :fee %>
-  <%= f.association :genre, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
-  <%= f.association :category, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.input :fee, class: "form-group"  %>
+  <%= f.association :genre, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
+  <%= f.association :category, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
   <%= f.submit %>
 <% end %>
