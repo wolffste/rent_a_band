@@ -1,37 +1,29 @@
-<h1>THIS IS THE BAND OVERVIEW</h1>
 <div class="start-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
 </div>
 
 <div class="text-center">
-<h2> Welcome to Rent a Band! Let's introduce our picks of the week</h2>
+<h2> We found some cool artists for you!</h2>
 </div>
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    <img src="https://images.unsplash.com/photo-1483393458019-411bc6bd104e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
-    <div class="card-band-infos">
-      <div>
-        <h2>Linkin Pork</h2>
-        <p>Rock</p>
-      </div>
+
+
+<div class="container">
+   <div class="row">
+  <% @bands.each do |band| %>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="band-card flex-item">
+          <img src= 'https://images.unsplash.com/photo-1483393458019-411bc6bd104e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80'/>
+           <div class="card-infos">
+            <p><strong><%= band.name %></strong></p>
+            <p><%= band.description %></p>
+            <%= link_to 'Show', band, class: "btn btn-flat" %>
+          </div>
+        </div>
     </div>
+      <% end %>
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    <img src="https://images.unsplash.com/photo-1481886756534-97af88ccb438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-    <div class="card-band-infos">
-      <div>
-        <h2>Sum 42</h2>
-        <p>Metall</p>
-      </div>
-    </div>
-  </div>
+</div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    <img src="https://images.unsplash.com/photo-1511815523365-f259a07e182a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-    <div class="card-band-infos">
-      <div>
-        <h2>Bob Morley</h2>
-        <p>Reggae</p>
-      </div>
-    </div>
-  </div>
+
+
+</div>
