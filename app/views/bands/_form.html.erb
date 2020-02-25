@@ -1,23 +1,9 @@
-<%= simple_form_for(band) do |f| %>
+<%= simple_form_for (@band) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :band_email %>
   <%= f.collection_check_boxes :availability, [[true, 'Yes'], [false, 'No']], :first, :last %>
   <%= f.input :fee %>
-  <%= f.association :genres %>
-  <%= f.association :genres, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
-  <%= f.association :categories, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.association :genre, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.association :category, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
   <%= f.submit %>
 <% end %>
-
-
-  create_table "bands", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "fee"
-    t.boolean "availability", default: true
-    t.string "band_email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_bands_on_user_id"

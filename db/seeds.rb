@@ -10,20 +10,6 @@ require 'faker'
 User.create(email: "test@test.de", password: "123456")
 
 
-10.times do
-
-  band = Band.new(
-    user_id: 1,
-    name: Faker::Hipster.word,
-    description: Faker::Hipster.sentence,
-    band_email: Faker::Internet.email,
-    fee: Faker::Number.within(range: 5..10)*100,
-    )
-  band.save!
-end
-puts 'finished import bands'
-
-
 genres = ["Blues","Classic Rock","Country","Dance","Disco","Funk","Grunge",
  "Hip-Hop","Jazz","Metal","New Age","Oldies","Other","Pop","R&B",
  "Rap","Reggae","Rock","Techno","Industrial","Alternative","Ska",
@@ -57,3 +43,23 @@ end
 categories.each do |category|
   Category.create(name: category)
 end
+
+
+genre = Genre.last
+category = Category.first
+10.times do
+
+  band = Band.new(
+    user_id: 1,
+    name: Faker::Hipster.word,
+    description: Faker::Hipster.sentence,
+    band_email: Faker::Internet.email,
+    fee: Faker::Number.within(range: 5..10)*100,
+    genre: genre,
+    category: category
+    )
+  band.save!
+end
+puts 'finished import bands'
+
+
