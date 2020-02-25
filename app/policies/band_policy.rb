@@ -30,4 +30,11 @@ class BandPolicy < ApplicationPolicy
   def destroy?
     return edit?
   end
+
+  def filter?
+    return new?
+  end
+
+
+
 end
