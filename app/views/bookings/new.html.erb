@@ -1,0 +1,17 @@
+<div class="row container">
+
+
+
+
+<%= simple_form_for (@bookings) do |f| %>
+  <%= f.input :name, class: "form-group" %>
+  <%= f.input :description, class: "form-group"  %>
+  <%= f.input :start_date, class: "form-group"  %>
+  <%= f.input :end_date, class: "form-group"  %>
+  <%= f.association :band %>
+
+  <%= f.submit %>
+<% end %>
+
+
+</div>
