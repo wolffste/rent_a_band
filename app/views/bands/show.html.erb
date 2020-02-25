@@ -1,0 +1,27 @@
+<div class="container bandprofile">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-img">
+        <%= cl_image_tag @band.photo.key, height: 300, width: 300, crop: :fill %>
+      </div>
+    </div>
+    <div class="col-md-6">
+           <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="profile-item">
+                <h1><%= @band.name %></h2>
+
+                  <p><strong>Name:</strong> <%= @band.name %></p>
+                  <p><strong>Description:</strong> <%= @band.description %></p>
+                  <p><strong>Fee:</strong> <%= @band.fee %> €</p>
+                  <p><strong>Genre:</strong> <%= @band.genre.name %></p>
+                  <p><strong>Category:</strong> <%= @band.category.name %></p>
+                   <%= link_to 'Back', bands_path, class: "btn btn-warning" %>
+              </li>
+            </ul>
+
+    </div>
+
+
+  </div>
+</div>
+

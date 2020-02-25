@@ -5,6 +5,8 @@ class BandPolicy < ApplicationPolicy
     end
   end
 
+
+
   def new?
     return true
   end
