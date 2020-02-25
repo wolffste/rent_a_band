@@ -7,18 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+User.create(email: "test@test.de", password: "123456")
 
 
 10.times do
 
-  user = Band.new(
+  band = Band.new(
     user_id: 1,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
     band_email: Faker::Internet.email,
     fee: Faker::Number.within(range: 5..10)*100,
     )
-  user.save!
+  band.save!
 end
 puts 'finished import bands'
 
