@@ -1,8 +1,10 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :update, :edit, :destroy]
+  skip_after_action :verify_policy_scoped, only: :index
+
 
   def index
-    @bands = policy_scope(Band).all
+    @bands = Band.all
   end
 
   def show

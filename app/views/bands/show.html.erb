@@ -8,16 +8,19 @@
     <div class="col-md-6">
            <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="profile-item">
-                <h1><%= @band.name %></h1>
+                <h1><%= @band.name %></h2>
 
                   <p><strong>Name:</strong> </p>
                   <p><%= @band.name %></p>
                   <p><strong>Description:</strong> </p>
                   <p><%= @band.description %></p>
                   <br>
-                   <%= link_to 'Back', bands, class: "btn btn-warning" %>
+                   <%= link_to 'Back', bands_path, class: "btn btn-warning" %>
               </li>
             </ul>
+
+
+
     </div>
   </div>
 </div>
