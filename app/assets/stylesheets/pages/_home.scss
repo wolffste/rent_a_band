@@ -4,25 +4,29 @@
   background-position: center;
   background-size: cover;
   height: 80vh;
-  padding: 200px 0;
+  padding: 50px 0;
   position: relative;
-}
-
-.row.justify-content-center{
-  position: absolute;
-  right: -200px;
-  top: 170px;
-  width: 1000px;
-
+  margin-bottom: 20px;
 }
 
 .container{
-  width: 80% vw;
-  background-color: red;
+  position: absolute;
+  margin: 20px 20px;
+  right: 0;
+  max-width: 500px;
+  padding: 3px;
+  background:rgba(255,255,255, 0.8);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.new {
+  margin: 15px;
 }
 
 h2{
 font-size: 26px;
+margin-bottom: 20px;
 }
 
 
