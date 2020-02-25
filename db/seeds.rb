@@ -60,6 +60,9 @@ category = Category.first
     )
   band.save!
 end
+
+
+
 puts 'finished import bands'
 
 
