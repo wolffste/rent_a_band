@@ -2,10 +2,13 @@ class BandsController < ApplicationController
   before_action :set_band, only: [:show, :update, :edit, :destroy]
   skip_after_action :verify_policy_scoped, only: :index
 
-
   def index
     @bands = Band.all
   end
+
+  # def index
+  #   @bands = policy_scope(Band).all
+  # end
 
   def show
     authorize @band
@@ -45,6 +48,11 @@ class BandsController < ApplicationController
     authorize @band
     @band.destroy
     redirect_to bands_path
+  end
+
+  def filter
+    @filtered_bands = Band.where("category_id = ? and genre_id= ? ", "#{params[:search][:category]}", "#{params[:search][:genre]}")
+    authorize @filtered_bands
   end
 
   private

@@ -1,11 +1,10 @@
-class BandPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
+
     def resolve
       scope.where(user: user)
     end
   end
-
-
 
   def new?
     return true
@@ -32,11 +31,4 @@ class BandPolicy < ApplicationPolicy
   def destroy?
     return edit?
   end
-
-  def filter?
-    return new?
-  end
-
-
-
 end
