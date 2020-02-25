@@ -18,7 +18,7 @@ class BandsController < ApplicationController
     @band = Band.new(band_params)
     @band.user = current_user
     authorize @band
-    if @band.save!
+    if @band.save
       redirect_to band_path(@band)
     else
       render :new
@@ -52,7 +52,7 @@ class BandsController < ApplicationController
   end
 
   def band_params
-    params.require(:band).permit(:name, :availability, :description, :fee, :category, :genre)
+    params.require(:band).permit(:name, :availability, :description, :fee, :category_id, :genre_id)
   end
 
 end

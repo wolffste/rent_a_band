@@ -1,0 +1,19 @@
+// .band-container{
+//   padding: 20px;
+//   @media(min-width: 800px) {
+//     display: flex;
+//   }
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+
+.band-card{
+  margin: 10px;
+  // flex-direction: row;
+  // width: 20%;
+}
+
+.band-card img{
+  width: 100%;
+}
