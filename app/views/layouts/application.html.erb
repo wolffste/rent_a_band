@@ -14,7 +14,14 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
       <footer>
-<div class="footer">
+
+
+    <%= javascript_include_tag 'application' %>
+
+    <%= javascript_pack_tag 'application' %>
+  </body>
+
+  <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -27,11 +34,6 @@
 
 
 </footer>
-
-    <%= javascript_include_tag 'application' %>
-
-    <%= javascript_pack_tag 'application' %>
-  </body>
 
 
 </html>

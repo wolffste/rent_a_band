@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
