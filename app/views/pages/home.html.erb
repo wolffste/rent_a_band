@@ -1,54 +1,26 @@
 <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
-<div class="row home-container">
+  <div class="row home-container">
     <div class="new">
       <h2 class= "text-center mb-1 ">Which kind of band?</h2>
       <%= simple_form_for :search, url: filter_path, method: 'get' do |f| %>
-      <div class="form-group">
-
-      </div>
-        <%= f.input :genre, collection: Genre.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
-        <%= f.input :category, collection: Category.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
-        <%= f.input :startdate, class: "form-control datepicker", id: "datepicker", placeholder: "DD.MM.YYYY" %>
-        <%= f.input :enddate, class: "form-control datepicker", id: "datepicker2", placeholder: "DD.MM.YYYY" %>
-        <%= f.submit %>
-      <% end %>
-
-
-
-
-
-<!--         <form action="#">
-       <h2 class= "text-center mb-1 ">What kind of band are you looking for?</h2>
-
-          <div class ="form-group">
-            <label for="genre">Genre</label>
-            <input type="text" class="form-control" id="genre" placeholder="Rock">
-          </div>
-
-          <div class ="form-group">
-            <label for="category">Band Type</label>
-            <input type="text" class="form-control" id="category" placeholder="Duo">
-          </div>
-          <div class="form-row">
-          <div class="col-6 form-group">
-            <label for="startdate">Startdate</label>
-            <input type="text" class="form-control" id="datepicker" placeholder="DD.MM.YYYY" value readonly>
-          </div>
-          <div class="col-6 form-group">
-            <label for="enddate">Enddate</label>
-            <input type="text" class="form-control" id="datepicker2" placeholder="DD.MM.YYYY" value readonly>
-          </div>
+      <%= f.input :genre, collection: Genre.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
+      <%= f.input :category, collection: Category.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
+      <div class="form-row">
+        <div class="col-6 form-group">
+          <%= f.input :startdate, as: :string, required: false, input_html: {class: "datepicker form-control"}, placeholder: "DD.MM.YYYY" %>
         </div>
-            link_to 'Search', filter_path, class: "btn btn-warning btn-lg w-100"
-      </form> -->
+        <div class="col-6 form-group">
+          <%= f.input :enddate, as: :string, required: false, input_html: {class: "datepicker form-control"}, placeholder: "DD.MM.YYYY" %>
+        </div>
+      </div>
+      <%= f.button :submit, "Go!", class: "btn btn-warning btn-lg w-100" %>
+      <% end %>
     </div>
+  </div>
 </div>
-</div>
-
 <br>
-
 <div class="text-center">
-<h2> Welcome to Rent a Band! Let's introduce our picks of the week</h2>
+  <h2> Welcome to Rent a Band! Let's introduce our picks of the week</h2>
 </div>
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
@@ -60,7 +32,6 @@
       </div>
     </div>
   </div>
-
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
     <img src="https://images.unsplash.com/photo-1481886756534-97af88ccb438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
     <div class="card-band-infos">
@@ -70,7 +41,6 @@
       </div>
     </div>
   </div>
-
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
     <img src="https://images.unsplash.com/photo-1511815523365-f259a07e182a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
     <div class="card-band-infos">
@@ -81,21 +51,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-<!--   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Datepicker - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-    $( "#datepicker2" ).datepicker();
-  } );
-  </script> -->
-
