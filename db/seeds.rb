@@ -45,23 +45,6 @@ categories.each do |category|
 end
 
 
-genre = Genre.last
-category = Category.first
-10.times do
-  band = Band.new(
-    user_id: 1,
-    name: Faker::Hipster.word,
-    description: Faker::Hipster.sentence,
-    band_email: Faker::Internet.email,
-    fee: Faker::Number.within(range: 5..10)*100,
-    genre: genre,
-    category: category
-    )
-  band.save!
-end
 
-
-
-puts 'finished import bands'
 
 
