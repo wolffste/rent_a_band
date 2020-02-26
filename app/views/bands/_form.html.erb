@@ -6,5 +6,5 @@
   <%= f.association :genre, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
   <%= f.association :category, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
   <%= f.input :photo, as: :file  %>
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-warning"%>
 <% end %>
