@@ -11,7 +11,6 @@
      <li>
       <p><strong>Band:</strong> <%= booking.band.name %></p>
       <p><strong>Booked by:</strong> <%= booking.user.email %></p>
-      <p><%= booking.total_fee %></p>
       <td><%= link_to 'Show', booking, class: "btn btn-warning"%></td>
       <% if policy(booking).edit? %>
         <td><%= link_to 'Edit', edit_booking_path(booking), class: "btn btn-warning" %></td>
