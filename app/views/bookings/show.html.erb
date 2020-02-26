@@ -3,9 +3,31 @@
 
 <div class="container">
 
-<h1>see one booking</h1>
+<h1>Booking Details:</h1>
 
-
-<p><%= @booking.band.name %></p>
+<div class="container bandprofile">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-img">
+        <%= cl_image_tag @booking.band.photo.key %>
+      </div>
+    </div>
+    <div class="col-md-6">
+     <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="profile-item">
+          <h1><%= @booking.band.name %></h2>
+          <p><strong>Name:</strong> <%= @booking.band.name %></p>
+          <p><strong>Description:</strong> <%= @booking.band.description %></p>
+          <p><strong>Fee:</strong> <%= @booking.band.fee %> €</p>
+          <p><strong>Genre:</strong> <%= @booking.band.genre.name %></p>
+          <p><strong>Category:</strong> <%= @booking.band.category.name %></p>
+          <p><strong>Startdate:</strong> <%= @booking.start_date %></p>
+          <p><strong>Enddate:</strong> <%= @booking.end_date %></p>
+          <%= link_to 'Back to overview', bookings_path, class: "btn btn-warning" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 </div>
