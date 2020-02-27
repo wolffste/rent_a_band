@@ -2,7 +2,6 @@ body {
   background-color: white;
 }
 
-
 .container.bandprofile {
   margin-top: 20px;
   background-color: white;
@@ -13,8 +12,10 @@ body {
 
 .container.bandprofile img{
   margin: 20px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
+  justify-content: center;
 }
 
 .profile-item {

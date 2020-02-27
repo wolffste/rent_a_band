@@ -1,6 +1,6 @@
 <div class="container bandprofile">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="profile-img">
         <% if @band.photo.attached? %>
         <%= cl_image_tag @band.photo.key %>
@@ -9,8 +9,8 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-6">
-     <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <div class="col-md-7">
+     <ul class="nav" id="myTab" role="tablist">
         <li class="profile-item">
           <h1><%= @band.name %></h2>
           <p><strong>Name:</strong> <%= @band.name %></p>
@@ -25,4 +25,5 @@
     </div>
   </div>
 </div>
+<br>
 

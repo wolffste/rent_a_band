@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
-gem 'devise'
-
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
@@ -19,7 +17,7 @@ gem 'webpacker'
 gem 'cloudinary', '~> 1.12.0'
 
 gem 'faker'
-
+  gem 'devise'
 gem 'pundit'
 
 gem 'dotenv-rails', groups: [:development, :test]
@@ -28,7 +26,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'devise'
+
 end
 
 group :development, :test do
