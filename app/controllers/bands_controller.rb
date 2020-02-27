@@ -3,6 +3,7 @@ class BandsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index
 
   def index
+    return @bands = Band.all if params[:search].present? == false
     if params[:search][:category].present? && params[:search][:genre].present?
       @bands = Band.where("category_id = ? and genre_id= ? ", "#{params[:search][:category]}", "#{params[:search][:genre]}")
     elsif
@@ -44,7 +45,7 @@ class BandsController < ApplicationController
     @band.update(band_params)
     authorize @band
     if @band.save!
-      redirect_to band_path(@band)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -53,7 +54,7 @@ class BandsController < ApplicationController
   def destroy
     authorize @band
     @band.destroy
-    redirect_to bands_path
+    redirect_to dashboard_path
   end
 
   private

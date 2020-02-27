@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.band = @band
     authorize @booking
     if @booking.save
-      redirect_to bookings_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
     authorize @booking
     if @booking.save!
-      redirect_to bookings_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -45,7 +45,7 @@ class BookingsController < ApplicationController
   def destroy
     authorize @booking
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path
   end
 
   private
