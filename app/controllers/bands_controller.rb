@@ -3,6 +3,7 @@ class BandsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index
 
   def index
+    return @bands = Band.all if params[:search].present? == false
     if params[:search][:category].present? && params[:search][:genre].present?
       @bands = Band.where("category_id = ? and genre_id= ? ", "#{params[:search][:category]}", "#{params[:search][:genre]}")
     elsif
