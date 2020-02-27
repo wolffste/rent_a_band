@@ -72,7 +72,11 @@ margin-bottom: 20px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin: 20px;
-}
+  background: white;                         /* White background */
+  padding: 30px;                             /* Internal space */
+  border-radius: 4px;                        /* Small radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
