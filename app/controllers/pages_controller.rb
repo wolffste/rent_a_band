@@ -6,8 +6,10 @@ class PagesController < ApplicationController
   end
 
   def show_dashboard
+
     @user = current_user
     @bands = Band.where(user_id: @user.id)
     @bookings = current_user.bookings
+
   end
 end

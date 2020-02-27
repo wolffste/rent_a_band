@@ -1,39 +1,68 @@
-<h1>see all my Bookings</h1>
+<div class= "container">
+  <h1>my Bookings</h1>
   <% @bookings.each do |booking| %>
-    <li>
-      <td><%= booking.band.name %></td>
-      <td><%= booking.user.email %></td>
-      <td><%= booking.total_fee %></td>
-      <td><%= link_to 'Show', booking %></td>
-      <% if policy(booking).edit? %>
-        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-      <% end %>
-      <% if policy(booking).destroy? %>
-        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </li>
-  <% end %>
-
-<h1>See all my Bands</h1>
-
-<div class="container">
-  <div class="row">
-    <% @bands.each do |band| %>
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="band-card flex-item">
-        <% if band.photo.attached? %>
-        <%= cl_image_tag band.photo.key %>
+  <div class= "container bandprofile">
+  <div class= "raw">
+    <ul class= "nav nav-tabs" id="myTab" role="tablist">
+      <li>
+        <p class= "mt-2">booking-details:</p>
+        <p>Band name: <strong><%= booking.band.name %></strong></p>
+        <p>email-adress: <strong><%= booking.band.user.email %></strong></p>
+        <p>booking date:  <strong><%= booking.start_date %></strong> to:  <strong><%= booking.end_date %></strong></p>
+        <%if booking.confirmation_status == true %>
+          <% status = "confirmed" %>
         <% else %>
-        <%= cl_image_tag("a6fac407-95ce-4d45-b360-8330205ce210_l_svdjab") %>
+          <% status = "not confirmed" %>
         <% end %>
-        <div class="card-infos">
-          <p><strong><%= band.name %></strong></p>
-          <p><%= band.description %></p>
-          <%= link_to 'Show', band, class: "btn btn-warning" %>
-          <%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+        <p>confirmation status: <strong><%= status %></strong></p>
+        <% day_count = (booking.end_date - booking.start_date).numerator + 1 %>
+        <%booking.total_fee = day_count * booking.band.fee %>
+        <p>total fee: <strong><%= booking.total_fee %></strong> €</p>
+        <% if policy(booking).edit? %>
+          <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <% end %>
+        <% if policy(booking).destroy? %>
+          <td><%= link_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <% end %>
+  <h1 class="mt-3">my Bands</h1>
+
+    <% @bands.each do |band| %>
+    <div class="container bandprofile">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-item">
+            <% if band.photo.attached? %>
+            <%= cl_image_tag band.photo.key %>
+            <% else %>
+            <%= cl_image_tag("a6fac407-95ce-4d45-b360-8330205ce210_l_svdjab") %>
+            <% end %>
+          </div>
         </div>
+          <div class="col-md-6">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="profile-item">
+                <p><strong>Name:</strong> <%= band.name %></p>
+                <p><strong>Description:</strong> <%= band.description %></p>
+                <p><strong>Fee:</strong> <%= band.fee %> €</p>
+                <p><strong>Genre:</strong> <%= band.genre.name %></p>
+                <p><strong>Category:</strong> <%= band.category.name %></p>
+
+                <%= link_to 'Edit', edit_band_path(band), class: "btn btn-warning" %>
+                <%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+              </li>
+            </ul>
+          </div>
+
       </div>
     </div>
     <% end %>
   </div>
-</div>
+
+
+
+

@@ -38,7 +38,7 @@ class BandsController < ApplicationController
     @band.update(band_params)
     authorize @band
     if @band.save!
-      redirect_to band_path(@band)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -47,7 +47,7 @@ class BandsController < ApplicationController
   def destroy
     authorize @band
     @band.destroy
-    redirect_to bands_path
+    redirect_to dashboard_path
   end
 
   def filter
