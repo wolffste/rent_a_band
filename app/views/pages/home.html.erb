@@ -1,7 +1,7 @@
 <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
   <div class="row home-container">
     <div class="new">
-      <h2 class= "text-center mb-1 ">Which kind of band?</h2>
+      <h2 class= "text-center mb-1 ">Search for this kind of band</h2>
       <%= simple_form_for :search, url: bands_path, method: 'get' do |f| %>
       <%= f.input :genre, collection: Genre.all, input_html: { class: "beautiful-dropdown" }, prompt: 'all genres', required: false, include_hidden: false, class: "form-group"  %>
       <%= f.input :category, collection: Category.all, input_html: { class: "beautiful-dropdown" }, prompt: 'all categories', required: false, include_hidden: false, class: "form-group"  %>
