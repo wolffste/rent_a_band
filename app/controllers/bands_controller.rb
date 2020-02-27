@@ -3,12 +3,18 @@ class BandsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index
 
   def index
-    @bands = Band.all
+    if params[:search][:category].present? && params[:search][:genre].present?
+      @bands = Band.where("category_id = ? and genre_id= ? ", "#{params[:search][:category]}", "#{params[:search][:genre]}")
+    elsif
+      params[:search][:category].present? && params[:search][:genre].present? ==false
+      @bands = Band.where("category_id = ? ", "#{params[:search][:category]}")
+    elsif
+      params[:search][:category].present? == false && params[:search][:genre].present?
+      @bands = Band.where("genre_id = ? ", "#{params[:search][:genre]}")
+    else
+      @bands = Band.all
+    end
   end
-
-  # def index
-  #   @bands = policy_scope(Band).all
-  # end
 
   def show
     authorize @band
@@ -48,11 +54,6 @@ class BandsController < ApplicationController
     authorize @band
     @band.destroy
     redirect_to bands_path
-  end
-
-  def filter
-    @filtered_bands = Band.where("category_id = ? and genre_id= ? ", "#{params[:search][:category]}", "#{params[:search][:genre]}")
-    authorize @filtered_bands
   end
 
   private

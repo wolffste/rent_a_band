@@ -2,16 +2,16 @@
 </div>
 
 <div class="container">
-<%= simple_form_for :search, url: filter_path, method: 'get' do |f| %>
-<div class="row">
-  <div class="col-5 form-group">
+<%= simple_form_for :search, url: bands_path, method: 'get' do |f| %>
+<div class="row row d-flex align-items-end mb-4">
+  <div class="col-5 form-group mb-0">
     <%= f.input :genre, collection: Genre.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-control"  %>
   </div>
-  <div class="col-5 form-group">
+  <div class="col-5 form-group mb-0">
     <%= f.input :category, collection: Category.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-control"  %>
   </div>
-  <div class="col-2 form-group go">
-    <%= f.button :submit, "Go!", class: "btn btn-warning btn-lg w-100" %>
+  <div class="col-2 form-group">
+    <%= f.button :submit, "Go!", class: "btn btn-warning w-100" %>
   </div>
 </div>
 <% end %>
