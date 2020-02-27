@@ -3,8 +3,8 @@
     <div class="new">
       <h2 class= "text-center mb-1 ">Which kind of band?</h2>
       <%= simple_form_for :search, url: bands_path, method: 'get' do |f| %>
-      <%= f.input :genre, collection: Genre.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
-      <%= f.input :category, collection: Category.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
+      <%= f.input :genre, collection: Genre.all, input_html: { class: "beautiful-dropdown" }, prompt: 'all genres', required: false, include_hidden: false, class: "form-group"  %>
+      <%= f.input :category, collection: Category.all, input_html: { class: "beautiful-dropdown" }, prompt: 'all categories', required: false, include_hidden: false, class: "form-group"  %>
       <div class="form-row">
         <div class="col-6 form-group">
           <%= f.input :startdate, as: :string, required: false, input_html: {class: "datepicker form-control"}, placeholder: "DD.MM.YYYY" %>
