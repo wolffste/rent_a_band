@@ -45,6 +45,35 @@ categories.each do |category|
 end
 
 
+genre = Genre.last
+category = Category.first
+# 10.times do
 
+#   band = Band.new(
+#     user_id: 1,
+#     name: Faker::Hipster.word,
+#     description: Faker::Hipster.sentence,
+#     band_email: Faker::Internet.email,
+#     fee: Faker::Number.within(range: 5..10)*100,
+#     genre: genre,
+#     category: category
+#     )
+#   band.save!
+# end
+
+Band.create(
+  name: "Paul",
+    description: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
+  fee: 800,
+  availability: true,
+  band_email: nil,
+  user_id: 1,
+  category_id: 2,
+  genre_id: 30
+  )
+
+
+
+puts 'finished import bands'
 
 
