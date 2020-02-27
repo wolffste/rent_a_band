@@ -1,3 +1,4 @@
+
 <div class= "container">
   <h1>my Bookings</h1>
   <% @bookings.each do |booking| %>
@@ -53,7 +54,7 @@
                 <p><strong>Category:</strong> <%= band.category.name %></p>
 
                 <%= link_to 'Edit', edit_band_path(band), class: "btn btn-warning" %>
-                <%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+                <%= link_to 'Delete', band, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
               </li>
             </ul>
           </div>
