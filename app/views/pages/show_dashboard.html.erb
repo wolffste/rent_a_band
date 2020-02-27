@@ -1,0 +1,39 @@
+<h1>see all my Bookings</h1>
+  <% @bookings.each do |booking| %>
+    <li>
+      <td><%= booking.band.name %></td>
+      <td><%= booking.user.email %></td>
+      <td><%= booking.total_fee %></td>
+      <td><%= link_to 'Show', booking %></td>
+      <% if policy(booking).edit? %>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+      <% end %>
+      <% if policy(booking).destroy? %>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </li>
+  <% end %>
+
+<h1>See all my Bands</h1>
+
+<div class="container">
+  <div class="row">
+    <% @bands.each do |band| %>
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="band-card flex-item">
+        <% if band.photo.attached? %>
+        <%= cl_image_tag band.photo.key %>
+        <% else %>
+        <%= cl_image_tag("a6fac407-95ce-4d45-b360-8330205ce210_l_svdjab") %>
+        <% end %>
+        <div class="card-infos">
+          <p><strong><%= band.name %></strong></p>
+          <p><%= band.description %></p>
+          <%= link_to 'Show', band, class: "btn btn-warning" %>
+          <%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
