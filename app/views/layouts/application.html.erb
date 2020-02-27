@@ -13,19 +13,10 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <footer>
-      <div class="footer">
-        <div class="footer-links">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
-        <div class="footer-copyright">
-          This footer is made with <i class="fas fa-heart"></i> by Rudi, Stefan & Vera
-        </div>
-      </div>
-    </footer>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= render 'shared/footer' %>
   </body>
+
 </html>
