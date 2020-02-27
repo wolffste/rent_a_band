@@ -3,11 +3,14 @@ body {
 }
 
 .container.bandprofile {
-  margin-top: 20px;
-  background-color: white;
+  background:rgba(255,255,255, 0.9);
   border-radius: 4px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   overflow: hidden;
+  right: 0;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px;
 }
 
 .container.bandprofile img{
@@ -16,6 +19,7 @@ body {
   width: 100%;
   object-fit: cover;
   justify-content: center;
+  border-radius: 5px;
 }
 
 .profile-item {
