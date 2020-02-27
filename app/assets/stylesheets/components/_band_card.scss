@@ -1,23 +1,23 @@
-// .band-container{
-//   padding: 20px;
-//   @media(min-width: 800px) {
-//     display: flex;
-//   }
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: space-around;
-// }
-
 .band-card{
   margin: 10px;
-  // flex-direction: row;
-  // width: 20%;
   overflow: hidden;
+  background: white;                         /* White background */
+  padding: 30px;                             /* Internal space */
+  border-radius: 4px;                        /* Small radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  border: #ec973c solid 3px;
 }
 
 .band-card img{
   height: 200px;
   width: 100%;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-category {
+  border: #ec973c solid 3px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
