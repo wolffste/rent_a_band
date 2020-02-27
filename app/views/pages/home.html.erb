@@ -2,7 +2,7 @@
   <div class="row home-container">
     <div class="new">
       <h2 class= "text-center mb-1 ">Which kind of band?</h2>
-      <%= simple_form_for :search, url: filter_path, method: 'get' do |f| %>
+      <%= simple_form_for :search, url: bands_path, method: 'get' do |f| %>
       <%= f.input :genre, collection: Genre.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
       <%= f.input :category, collection: Category.all, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
       <div class="form-row">
