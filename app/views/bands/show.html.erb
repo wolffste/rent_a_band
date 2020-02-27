@@ -22,7 +22,7 @@
           <p><strong>Genre:</strong> <%= @band.genre.name %></p>
           <p><strong>Category:</strong> <%= @band.category.name %></p>
           <%= link_to 'Book this band', new_band_booking_path(@band), class: "btn btn-warning" %>
-          <%= link_to 'Back to overview', bands_path, class: "btn btn-warning" %>
+          <%= link_to 'Back to overview', bands_path, class: "btn btn-outline-warning" %>
         </li>
       </ul>
     </div>
