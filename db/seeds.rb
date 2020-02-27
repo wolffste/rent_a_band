@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-User.create(email: "test@test.de", password: "123456")
+User.create(email: "test2@test.de", password: "123456")
 
 
 genres = ["Blues","Classic Rock","Country","Dance","Disco","Funk","Grunge",
