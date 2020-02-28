@@ -8,15 +8,17 @@ class BandsController < ApplicationController
       return @bands = Band.all
     end
 
+
+
     if params[:search][:category].present? && params[:search][:genre].present?
       @bands = Band.where("category_id = ? and genre_id= ? ", "#{params[:search][:category]}", "#{params[:search][:genre]}")
       @message = "Here's your search result"
     elsif
-      params[:search][:category].present? && params[:search][:genre].present? ==false
+      params[:search][:category].present? && params[:search][:genre] == ""
       @bands = Band.where("category_id = ? ", "#{params[:search][:category]}")
       @message = "Here's your search result"
     elsif
-      params[:search][:category].present? == false && params[:search][:genre].present?
+      params[:search][:category] == "" && params[:search][:genre].present?
       @bands = Band.where("genre_id = ? ", "#{params[:search][:genre]}")
       @message = "Here's your search result"
     else
