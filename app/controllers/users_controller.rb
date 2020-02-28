@@ -4,15 +4,7 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def update
-    @user.update(user_params)
-    authorize @user
-    if @user.save!
-      redirect_to dashboard_path
-    else
-      render :new
-    end
-  end
+
 
   private
 
