@@ -1,17 +1,18 @@
 .start-banner{
-  background-position: center;
+  padding: 100px 0;
   background-size: cover;
+  background-position: center;
   height: 300px;
-  padding: 50px 0;
   position: relative;
   margin-bottom: 20px;
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border: #ec973c solid 3px;
+  color: white;
 }
 
 .home-banner {
