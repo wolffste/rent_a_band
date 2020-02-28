@@ -39,8 +39,8 @@
     <% @bands.each do |band| %>
     <div class="container bandprofile mb-3">
       <div class="row">
-        <div class="col-md-4">
-          <div class="profile-item">
+        <div class="col-md-5">
+          <div class="profile-img">
             <% if band.photo.attached? %>
             <%= cl_image_tag band.photo.key %>
             <% else %>
@@ -48,16 +48,13 @@
             <% end %>
           </div>
         </div>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <ul class="nav" id="myTab" role="tablist">
               <li class="profile-item">
-                <div>
                 <p><strong>Name:</strong> <%= band.name %></p>
                 <p><strong>Description:</strong> <%= band.description %></p>
-                <p><strong>Fee:</strong> <%= band.fee %> €</p>
                 <p><strong>Genre:</strong> <%= band.genre.name %></p>
                 <p><strong>Category:</strong> <%= band.category.name %></p>
-                </div>
                 <div>
                 </div>
 
