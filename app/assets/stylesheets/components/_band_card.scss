@@ -4,6 +4,24 @@
   padding: 30px;                             /* Internal space */
 }
 
+.bandindex-card{
+  margin: -5px;
+  overflow: hidden;                      /* White background */
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  margin-bottom: 10px;
+  img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }                            /* Internal space */
+}
+
+
 .band-name {
   color: #ec973c;
     font-weight: bold;
