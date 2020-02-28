@@ -1,11 +1,11 @@
 <%= simple_form_for (@band) do |f| %>
   <%= f.input :name, class:"form-control"%>
   <%= f.input :description, class: "form-group"  %>
-  <p>Availiability</p>
+  <label>Availability  </label>
   <%= f.collection_radio_buttons :availability, [[true, 'Yes'], [false, 'No']], :first, :last %>
   <%= f.input :fee, class: "form-group"  %>
   <%= f.association :genre, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
   <%= f.association :category, input_html: { class: "beautiful-dropdown" }, include_hidden: false, class: "form-group"  %>
-  <%= f.input :photo, as: :file  %>
+  <%= f.input :photo, as: :file, class: "btn btn-warning" %>
   <%= f.submit class: "btn btn-warning"%>
 <% end %>
