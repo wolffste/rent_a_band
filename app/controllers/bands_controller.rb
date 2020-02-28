@@ -41,7 +41,7 @@ class BandsController < ApplicationController
     @band.user = current_user
     authorize @band
     if @band.save
-      redirect_to band_path(@band)
+    redirect_to dashboard_path
     else
       render :new
     end
